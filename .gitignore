@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+build/
+dist/
+*.log
+settings.json
+.pytest_cache/
+_reference/gui-preview.png
