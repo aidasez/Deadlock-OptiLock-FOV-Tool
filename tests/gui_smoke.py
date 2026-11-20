@@ -77,6 +77,7 @@ def main() -> int:
         )
         check("write_gameinfo on by default", window.write_gameinfo_check.isChecked())
         check("write_video on by default", window.write_video_check.isChecked())
+        check("the window has its custom app icon", not window.windowIcon().isNull())
         check("aspect-only mode is gone", not hasattr(window, "fov_only_check"))
         check(
             "the removed keep-display option is gone",

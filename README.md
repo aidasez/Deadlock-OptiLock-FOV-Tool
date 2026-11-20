@@ -50,6 +50,8 @@ the important controls without scrolling:
 - The panel at the top shows the game folder, the installed OptiLock version, the
   installed and wanted aspect ratio, the selected preset, where the graphics settings
   come from, whether backups exist, whether the game is running, and the current status.
+- The window and executable use the monochrome radial-eye mark in
+  `deadlock_fov/assets/app_icon.svg` (PNG and ICO versions are included for packaging).
 
 All text is written in plain words and each label, button and sentence starts with a
 capital letter, so a first-time user can follow it without knowing the file names.

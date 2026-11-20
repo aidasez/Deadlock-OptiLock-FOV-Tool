@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 
 from PySide6.QtCore import Qt, QThread, QTimer, Signal
+from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (
     QApplication,
     QCheckBox,
@@ -42,6 +43,8 @@ from .patcher import (
 from .steam import Install, find_installs, resolve
 from .theme import ArcheyPanel, mono_font, stylesheet, ui_font
 
+APP_ICON = Path(__file__).resolve().parent / "assets" / "app_icon.png"
+
 
 class Worker(QThread):
     """Runs one blocking call off the UI thread."""
@@ -68,6 +71,7 @@ class MainWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
         self.setWindowTitle("Deadlock OptiLock+FOV Tool")
+        self.setWindowIcon(QIcon(str(APP_ICON)))
         self.setStyleSheet(stylesheet())
         self.setFont(ui_font(9))
         self.setMinimumWidth(740)
@@ -809,6 +813,7 @@ def _elide(text: str, limit: int) -> str:
 def run() -> int:
     app = QApplication(sys.argv)
     app.setApplicationName("Deadlock OptiLock+FOV Tool")
+    app.setWindowIcon(QIcon(str(APP_ICON)))
     app.setStyleSheet(stylesheet())
     app.setFont(ui_font(9))
     window = MainWindow()
